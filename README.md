@@ -1,50 +1,130 @@
-# Welcome to your Expo app 👋
+# My Store Mobile App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Bienvenue dans le dépôt **My-store-mobile-app** !  
+Ce dépôt contient le code source de l’application mobile pour la gestion d'une boutique en ligne moderne et intuitive, intégrant l’API publique [FakeStoreAPI](https://fakestoreapi.com/).  
+Vous trouverez ici toutes les ressources nécessaires pour installer, configurer, exécuter et comprendre les choix techniques ainsi que les processus de développement du projet.
 
-## Get started
+---
 
-1. Install dependencies
+## 🚀 Fonctionnalités principales
 
-   ```bash
-   npm install
-   ```
+- **Authentification & Gestion des utilisateurs**
+  - Inscription, connexion, déconnexion (stockage local ou via l’API si disponible)
+  - Modification du profil utilisateur
+- **Catalogue de produits (via [FakeStoreAPI](https://fakestoreapi.com/))**
+  - Liste, recherche et filtrage des produits
+  - Visualisation détaillée d’un produit
+- **Panier d’achats**
+  - Ajout/suppression de produits
+  - Mise à jour des quantités
+- **Système de commande**
+  - Passation de commande
+  - Suivi du statut de commande (stockage local ou via l’API)
+- **Notifications**
+  - Alertes pour les promotions/nouveaux produits (si implémenté)
+  - Notifications de confirmation de commande (locales)
+- **Gestion administrative (si activée côté client)**
+  - Ajout, modification, suppression de produits (simulation côté client)
+- **Compatibilité multi-plateforme**
+  - Application mobile (Android/iOS) développée avec React Native
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
+## 🛠️ Prérequis
 
-In the output, you'll find options to open the app in a
+- [Node.js](https://nodejs.org/) (version recommandée : 18+)
+- [npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/)
+- [React Native CLI](https://reactnative.dev/docs/environment-setup) (pour la version mobile)
+- [Expo CLI](https://docs.expo.dev/get-started/installation/) (si Expo est utilisé)
+- [Android Studio](https://developer.android.com/studio) ou [Xcode](https://developer.apple.com/xcode/) (pour l'émulation mobile)
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## ⚙️ Installation et configuration
 
-## Get a fresh project
-
-When you're ready, run:
+### 1. Cloner le dépôt
 
 ```bash
-npm run reset-project
+git clone https://github.com/larabiislem/My-store-mobile-app.git
+cd My-store-mobile-app
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2. Configuration des variables d’environnement
 
-## Learn more
+Créez un fichier `.env` à la racine du projet si vous souhaitez définir des URLs spécifiques pour l’API ou gérer des clés (facultatif).  
+Exemple :
+```env
+API_URL=https://fakestoreapi.com
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+### 3. Installation des dépendances
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npm install
+# ou
+yarn install
+```
 
-## Join the community
+### 4. Lancement de l’application mobile
 
-Join our community of developers creating universal apps.
+- Avec Expo :
+  ```bash
+  expo start
+  ```
+- Avec React Native CLI :
+  ```bash
+  npx react-native run-android
+  # ou
+  npx react-native run-ios
+  ```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+---
+
+## 📝 Choix techniques & processus de développement
+
+### Stack technique
+
+- **Frontend Mobile** : React Native (compatibilité Android/iOS)
+- **API Produits** : [FakeStoreAPI](https://fakestoreapi.com/)  
+  → Tous les produits, catégories et informations sont issus de cette API publique.
+- **Gestion d’état** : Redux, Context API ou autres selon le besoin
+- **Authentification** : Stockage local (AsyncStorage) ou via les endpoints de FakeStoreAPI si disponible
+
+### Processus de développement
+
+1. **Modélisation & conception** :  
+   Analyse des besoins, définition des user stories, création des wireframes.
+2. **Développement itératif** :  
+   Approche agile, intégration continue via GitHub Actions, tests unitaires et d’intégration.
+3. **Revue de code** :  
+   Pull requests systématiques, revues de code collaboratives.
+4. **Déploiement** :  
+   Utilisation de TestFlight/Google Play pour la distribution mobile.
+5. **Documentation & support** :  
+   Documentation maintenue dans le dépôt, guides d'utilisation et de contribution.
+
+### 🔗 Intégration de FakeStoreAPI
+
+- **Documentation de l’API** : [https://fakestoreapi.com/docs](https://fakestoreapi.com/docs)
+- Les appels API sont réalisés via `fetch` ou un client HTTP (axios, etc.).
+- Les endpoints utilisés :
+  - `/products` : liste des produits
+  - `/products/{id}` : détails d’un produit
+  - `/carts` : gestion du panier (si utilisé)
+  - `/users` : gestion des utilisateurs (si utilisé)
+- Les données sensibles (ex : commandes) peuvent être simulées côté client si l’API ne les gère pas.
+
+---
+
+## 🤝 Contribuer
+
+Les contributions sont les bienvenues !  
+Merci de lire le fichier [CONTRIBUTING.md](CONTRIBUTING.md) pour connaître le processus de contribution.
+
+---
+
+
+
+
+
+---
